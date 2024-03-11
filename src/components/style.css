@@ -1,0 +1,46 @@
+
+.movie-list {
+    margin-top: 20px;
+  }
+  
+  .movie-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .movie-card {
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .movie-card:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .movie-info {
+    padding: 10px;
+  }
+  
+  .movie-details {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .movie-details img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+
+
+
