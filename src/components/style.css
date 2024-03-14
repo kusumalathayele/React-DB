@@ -103,7 +103,7 @@ body {
   .movie-cards {
     width: 100%;
     display: flex;
-    justify-content:center ;
+    justify-content:center;
   }
   .movie-card {
     width: calc(50% - 20px);
