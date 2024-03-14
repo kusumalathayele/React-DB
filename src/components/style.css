@@ -1,62 +1,106 @@
 
+body {
+  background-color: black;
+}
+
 .movie-list {
-    margin-top: 20px;
-  }
-  
+  margin-top: 20px;
+}
+
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 150px;
+}
+
+.movie-card {
+  width: 245px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px white;
+  color: antiquewhite;
+}
+
+.movie-card:hover {
+  box-shadow: 0 0 5px rgba(13, 216, 138, 0.3);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-info {
+  padding: 10px;
+}
+
+.movie-details {
+  display: flex;
+}
+
+.movie-details img {
+  width: 200px;
+  height: auto;
+  margin-right: 20px;
+  padding-top: 150px;
+  box-shadow: 2px 2px 5px white;
+}
+
+.movie-details div {
+  padding-top: 150px;
+  color: white;
+  box-shadow: 2px 2px 5px white;
+}
+
+.hello {
+  text-align: center;
+  margin-top: -10px;
+}
+
+.hello input {
+  padding: 10px;
+  border: none;
+}
+
+.s {
+  padding: 10px;
+  border: none;
+}
+
+.title {
+  text-align: center;
+  color: aquamarine;
+  border: 2px solid blueviolet;
+  font-size: 30px;
+}
+
+.nav {
+  width: 100%;
+  background-image: linear-gradient(black, blue);
+  background-color: rgba(143, 238, 222, 0.596);
+  position: fixed;
+  border: 2px solid black;
+  margin-top: -20px;
+  box-shadow: 2px 2px 10px white;
+  height: 115px;
+}
+
+
+@media screen and (max-width: 727px) {
   .movie-cards {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .movie-card {
-    width: 200px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .movie-card:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  .movie-card img {
     width: 100%;
-    height: auto;
   }
-  
-  .movie-info {
-    padding: 10px;
+  .movie-card {
+    width: calc(50% - 20px);
+    margin: 10px; 
   }
-  
+  .nav {
+    width: 100%;
+  }
   .movie-details {
-    display: flex;
-    margin-top: 20px;
+    width: 100%; 
   }
-  
-  .movie-details img {
-    width: 200px;
-    height: auto;
-    margin-right: 20px;
-  }
-  .hello{
-    /* margin-left: 550px; */
-    text-align: center;
-  }
-  .hello input{
-    padding: 10px;
-    border: none;
-  }
-  .s{
-    padding: 10px;
-    border: none;
-  }
-  .title{
-    text-align: center;
-    color: cadetblue;
-  }
-  
-
-
-
+}

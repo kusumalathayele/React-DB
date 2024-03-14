@@ -17,7 +17,7 @@ function App() {
     fetchRandomGenreMovies();
   }, []);
 
-  const fetchRandomGenreMovies = async () => {
+  const fetchRandomGenreMovies = async()=>{
     try {
       const genres = ['action', 'comedy', 'drama', 'romance', 'horror'];
       const randomGenre = genres[Math.floor(Math.random() * genres.length)];
@@ -27,7 +27,7 @@ function App() {
     }
   };
 
-  const fetchMovies = async (genre) => {
+  const fetchMovies = async(genre)=>{
     try {
       const response = await axios.get(`${API_URL}&s=${genre}`);
       setMovies(response.data.Search);
@@ -36,7 +36,7 @@ function App() {
     }
   };
 
-  const fetchMovieDetails = async (imdbID) => {
+  const fetchMovieDetails = async(imdbID)=>{
     try {
       const response = await axios.get(`${API_URL}&i=${imdbID}`);
       setSelectedMovie(response.data);
@@ -51,7 +51,6 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className='title'>Movie Search</h1>
       <SearchBar onSearch={fetchMovies} />
       {selectedMovie && <MovieDetails movie={selectedMovie} onClose={closeMovieDetails} />}
       <MovieList movies={movies} onSelectMovie={fetchMovieDetails} />
