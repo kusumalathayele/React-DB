@@ -6,7 +6,6 @@ body {
 .movie-list {
   margin-top: 20px;
 }
-
 .movie-cards {
   display: flex;
   flex-wrap: wrap;
@@ -76,7 +75,19 @@ body {
   border: 2px solid blueviolet;
   font-size: 30px;
 }
-
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: antiquewhite;
+}
+.p{
+  color: aliceblue;
+  font-size: 60px;
+  
+}
 .nav {
   width: 100%;
   background-image: linear-gradient(black, blue);

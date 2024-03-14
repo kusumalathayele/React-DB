@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './components/style.css';
@@ -12,36 +13,47 @@ const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 function App() {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchRandomGenreMovies();
   }, []);
 
-  const fetchRandomGenreMovies = async()=>{
+  const fetchRandomGenreMovies = async () => {
     try {
+      setLoading(true);
       const genres = ['action', 'comedy', 'drama', 'romance', 'horror'];
       const randomGenre = genres[Math.floor(Math.random() * genres.length)];
       await fetchMovies(randomGenre);
     } catch (error) {
-      console.error('Error fetching random genre movies:', error);
+      setError(error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const fetchMovies = async(genre)=>{
+  const fetchMovies = async (genre) => {
     try {
+      setLoading(true);
       const response = await axios.get(`${API_URL}&s=${genre}`);
       setMovies(response.data.Search);
     } catch (error) {
-      console.error('Error fetching movies:', error);
+      setError(error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const fetchMovieDetails = async(imdbID)=>{
+  const fetchMovieDetails = async (imdbID) => {
     try {
+      setLoading(true);
       const response = await axios.get(`${API_URL}&i=${imdbID}`);
       setSelectedMovie(response.data);
     } catch (error) {
-      console.error('Error fetching movie details:', error);
+      setError(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -52,11 +64,12 @@ function App() {
   return (
     <div className="container">
       <SearchBar onSearch={fetchMovies} />
+      {loading && <div className="loader">Loading...</div>}
+      {error && <div>Error: {error.message}</div>}
       {selectedMovie && <MovieDetails movie={selectedMovie} onClose={closeMovieDetails} />}
-      <MovieList movies={movies} onSelectMovie={fetchMovieDetails} />
+      {!loading && !error && <MovieList movies={movies} onSelectMovie={fetchMovieDetails} />}
     </div>
   )
 }
 
 export default App;
-
