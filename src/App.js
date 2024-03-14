@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Movie Search</h1>
+      <h1 className='title'>Movie Search</h1>
       <SearchBar onSearch={fetchMovies} />
       {selectedMovie && <MovieDetails movie={selectedMovie} onClose={closeMovieDetails} />}
       <MovieList movies={movies} onSelectMovie={fetchMovieDetails} />

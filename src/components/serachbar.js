@@ -14,7 +14,7 @@ function SearchBar({ onSearch }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='hello'>
       <input type="text" value={searchTerm} onChange={handleChange} placeholder="Search for a movie..." style={{backgroundColor:"lightblue"}}/>
       <button type="submit" style={{backgroundColor:"lightpink"}}>Search</button>
     </form>
