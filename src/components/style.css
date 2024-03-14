@@ -87,20 +87,22 @@ body {
   box-shadow: 2px 2px 10px white;
   height: 115px;
 }
-
-
+/* for mobiles */
 @media screen and (max-width: 727px) {
   .movie-cards {
     width: 100%;
+    display: flex;
+    justify-content:center ;
   }
   .movie-card {
     width: calc(50% - 20px);
-    margin: 10px; 
+    margin: 10px;
   }
   .nav {
     width: 100%;
   }
   .movie-details {
-    width: 100%; 
+    width: 100%;
   }
 }
+
