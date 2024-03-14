@@ -41,10 +41,20 @@
     margin-right: 20px;
   }
   .hello{
-    margin-left: 550px;
+    /* margin-left: 550px; */
+    text-align: center;
+  }
+  .hello input{
+    padding: 10px;
+    border: none;
+  }
+  .s{
+    padding: 10px;
+    border: none;
   }
   .title{
     text-align: center;
+    color: cadetblue;
   }
   
 
