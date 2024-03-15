@@ -99,7 +99,7 @@ body {
   height: 115px;
 }
 /* for mobiles */
-@media screen and (max-width: 727px) {
+@media screen and (max-width: 767px) {
   .movie-cards {
     width: 100%;
     display: flex;
@@ -116,4 +116,21 @@ body {
     width: 100%;
   }
 }
+
+/* for desktops */
+@media screen and (min-width: 1025px){
+  .movie-cards {
+    width: 80%; 
+    margin: 0 auto; 
+  }
+  .movie-card {
+    width: 245px; 
+    margin: 10px;
+  }
+  .movie-details {
+    width: auto;
+    margin-top: 20px;
+  }
+}
+
 
