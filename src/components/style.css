@@ -120,17 +120,21 @@ body {
 /* for desktops */
 @media screen and (min-width: 1025px){
   .movie-cards {
-    width: 80%; 
-    margin: 0 auto; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute the movie cards evenly */
+    width: 100%; /* Adjust the width to your preference */
   }
   .movie-card {
-    width: 245px; 
+    width: calc(20% - 22px); /* Adjust the width to fit 5 columns with some spacing */
     margin: 10px;
   }
+  .nav {
+    width: 100%;
+  }
   .movie-details {
-    width: auto;
-    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
-
-
