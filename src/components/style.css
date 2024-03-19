@@ -122,11 +122,11 @@ body {
   .movie-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Distribute the movie cards evenly */
-    width: 100%; /* Adjust the width to your preference */
+    justify-content: space-between; 
+    width: 100%;
   }
   .movie-card {
-    width: calc(20% - 22px); /* Adjust the width to fit 5 columns with some spacing */
+    width: calc(20% - 22px);
     margin: 10px;
   }
   .nav {
