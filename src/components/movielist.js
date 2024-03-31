@@ -7,9 +7,12 @@ function MovieList({ movies, onSelectMovie, loading }) {
   return (
     <div className="movie-list">
       <div className="movie-cards">
-        {loading ? (
-          <div className="loader">Loading...</div>
-        ) : movies && movies.length > 0 ? (
+        {
+        loading
+         ? 
+         ( <div className="loader">Loading...</div>) 
+        :
+         movies && movies.length > 0 ? (
           movies.map(movie => (
             <div key={movie.imdbID} className="movie-card" onClick={() => onSelectMovie(movie.imdbID)}>
               <img src={movie.Poster} alt={movie.Title} />

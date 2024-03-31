@@ -38,6 +38,7 @@ function App() {
       setLoading(true);
       const response = await axios.get(`${API_URL}&s=${genre}`);
       setMovies(response.data.Search);
+      console.log(response.data.Search);
     } catch (error) {
       setError(error);
     } finally {
@@ -50,6 +51,7 @@ function App() {
       setLoading(true);
       const response = await axios.get(`${API_URL}&i=${imdbID}`);
       setSelectedMovie(response.data);
+      console.log(response.data);
     } catch (error) {
       setError(error);
     } finally {
